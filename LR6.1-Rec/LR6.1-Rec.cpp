@@ -68,7 +68,7 @@ int Count(int* r, int size, int i)
         return 0;
 
     int isSatisfied = 0;
-    if (r[i] % 2 == 0 && i % 7 != 0)
+    if ((r[i] / 2) * 2 == r[i] && (i / 7) * 7 != i)
         isSatisfied = 1;
 
     return isSatisfied + Count(r, size, i + 1);
@@ -80,7 +80,7 @@ int Sum(int* r, int size, int i)
         return 0;
 
     int valueToAdd = 0;
-    if (r[i] % 2 == 0 && i % 7 != 0)
+    if ((r[i] / 2) * 2 == r[i] && (i / 7) * 7 != i)
         valueToAdd = r[i];
 
     return valueToAdd + Sum(r, size, i + 1);
@@ -90,7 +90,7 @@ void ZeroElements(int* r, int size, int i)
 {
     if (i < size)
     {
-        if (r[i] % 2 == 0 && i % 7 != 0)
+        if ((r[i] / 2) * 2 == r[i] && (i / 7) * 7 != i)
             r[i] = 0;
 
         ZeroElements(r, size, i + 1);
